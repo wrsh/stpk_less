@@ -1,0 +1,25 @@
+class Buffer:
+    def __init__(self):
+        self.counter = 0
+        self.origin_list = []
+
+
+    def add(self, *a):
+        self.origin_list = self.origin_list + list(a)
+        if len(self.origin_list) >= 5:
+            while len(self.origin_list) >= 5:
+                print(sum(self.origin_list[0:5]))
+                del self.origin_list[0:5]
+        else:
+           # print(self.origin_list)
+           pass
+
+
+
+    def get_current_part(self):
+        if len(self.origin_list) > 5:
+            mix = self.origin_list[0:5]
+            del self.origin_list[0:5]
+            return mix
+        else:
+            return self.origin_list
